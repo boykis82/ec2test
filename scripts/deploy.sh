@@ -7,7 +7,7 @@ echo "> file copy"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> pid 확인"
-CURRENT_PID=$(pgrep -fl miniswing-pilot | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -fl miniswing-pilot | grep java | awk '{print $1}')
 
 echo "pid = $CURRENT_PID"
 
