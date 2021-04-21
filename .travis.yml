@@ -31,14 +31,13 @@ deploy:
     wait-until-deployed: true
 
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
-    bucket: realimpact-build
-    key: miniswing-pilot.zip
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: realimpact-build # S3 버킷
+    key: miniswing-pilot.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: miniswing-pilot
-    deployment_group: miniswing-pilot-group
+    application: miniswing-pilot # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: miniswing-pilot-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
 
