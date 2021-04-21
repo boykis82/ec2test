@@ -12,6 +12,6 @@ public class Controller {
     @GetMapping("/greetings/{name}")
     public String getMenu(
             @PathVariable("name") String name) {
-        return "hello " + name;
+        return "hello " + name + "! nice to meet you";
     }
 }
