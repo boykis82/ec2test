@@ -10,4 +10,5 @@ public class MiniswingPilotApplication {
 		SpringApplication.run(MiniswingPilotApplication.class, args);
 	}
 
+
 }

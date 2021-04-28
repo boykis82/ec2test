@@ -1,0 +1,22 @@
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        # Strongly recommend to set this property to "none" in a production environment!
+        ddl-auto: update
+
+logging:
+  level:
+    root: INFO
+    org.caltech.miniswingpilot.domain: DEBUG
+    com:
+      querydsl:
+        sql: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
