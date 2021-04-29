@@ -122,7 +122,7 @@ public class SvcControllerTest {
                 .content( objectMapper.writeValueAsString(SvcUpdateRequestDto.createSuspendServiceDto()) )
         ).andExpect( status().isOk() );
 
-        assertThat(svcService.getService(1).getSvcStCd()).isEqualTo(SvcStCd.SP);
+        assertThat(svcService.getService(s.getSvcMgmtNum()).getSvcStCd()).isEqualTo(SvcStCd.SP);
     }
 
     @Test
@@ -138,7 +138,7 @@ public class SvcControllerTest {
                 .content( objectMapper.writeValueAsString(SvcUpdateRequestDto.createActivateServiceDto()) )
         ).andExpect( status().isOk() );
 
-        assertThat(svcService.getService(1).getSvcStCd()).isEqualTo(SvcStCd.AC);
+        assertThat(svcService.getService(s.getSvcMgmtNum()).getSvcStCd()).isEqualTo(SvcStCd.AC);
     }
 
     @Test
@@ -152,7 +152,7 @@ public class SvcControllerTest {
                 .content( objectMapper.writeValueAsString(SvcUpdateRequestDto.createTerminateServiceDto()) )
         ).andExpect( status().isOk() );
 
-        assertThat(svcService.getService(1).getSvcStCd()).isEqualTo(SvcStCd.TG);
+        assertThat(svcService.getService(s.getSvcMgmtNum()).getSvcStCd()).isEqualTo(SvcStCd.TG);
     }
 
     @Test
@@ -167,7 +167,7 @@ public class SvcControllerTest {
                 .andExpect( status().isOk() )
                 .andExpect( content().contentType("application/json") )
                 .andExpect( jsonPath("$.svcNum").value("0101234567") )
-                .andExpect( jsonPath("$.svcMgmtNum").value(1) );
+                .andExpect( jsonPath("$.svcMgmtNum").value(s.getSvcMgmtNum()) );
     }
 
     private Svc subscribeSampleSvc() {
